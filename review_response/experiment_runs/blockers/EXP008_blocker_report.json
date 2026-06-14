@@ -1,0 +1,13 @@
+{
+    "env_name": "TrafficEnv7-v0",
+    "gym_make": true,
+    "reset": false,
+    "step": false,
+    "victim_model_exists": false,
+    "observation_shape": null,
+    "feasible": false,
+    "blockers": [
+        "Failed to reset env: Not connected.",
+        "No PPO victim model found for TrafficEnv7-v0 at logs/eval/TrafficEnv7-v0/PPO/best_model/best_model.zip"
+    ]
+}
