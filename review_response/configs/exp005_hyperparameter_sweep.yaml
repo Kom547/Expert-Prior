@@ -1,0 +1,527 @@
+experiment_id: EXP005
+runs:
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1
+  run_id: EXP005_k0.1_full_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_full
+  run_id: EXP005_k0.1_full_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1
+  run_id: EXP005_k0.1_full_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_full
+  run_id: EXP005_k0.1_full_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1
+  run_id: EXP005_k0.1_full_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_full
+  run_id: EXP005_k0.1_full_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1
+  run_id: EXP005_k0.1_full_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_full
+  run_id: EXP005_k0.1_full_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1
+  run_id: EXP005_k0.1_full_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_full
+  run_id: EXP005_k0.1_full_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1 --no_lambda_grad
+  run_id: EXP005_k0.1_fixed_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_fixed
+  run_id: EXP005_k0.1_fixed_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1 --no_lambda_grad
+  run_id: EXP005_k0.1_fixed_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_fixed
+  run_id: EXP005_k0.1_fixed_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1 --no_lambda_grad
+  run_id: EXP005_k0.1_fixed_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_fixed
+  run_id: EXP005_k0.1_fixed_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1 --no_lambda_grad
+  run_id: EXP005_k0.1_fixed_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_fixed
+  run_id: EXP005_k0.1_fixed_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1 --no_lambda_grad
+  run_id: EXP005_k0.1_fixed_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_fixed
+  run_id: EXP005_k0.1_fixed_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1 --wo_beta
+  run_id: EXP005_k0.1_wo_beta_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_wo_beta
+  run_id: EXP005_k0.1_wo_beta_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1 --wo_beta
+  run_id: EXP005_k0.1_wo_beta_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_wo_beta
+  run_id: EXP005_k0.1_wo_beta_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1 --wo_beta
+  run_id: EXP005_k0.1_wo_beta_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_wo_beta
+  run_id: EXP005_k0.1_wo_beta_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1 --wo_beta
+  run_id: EXP005_k0.1_wo_beta_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_wo_beta
+  run_id: EXP005_k0.1_wo_beta_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 0.1 --wo_beta
+  run_id: EXP005_k0.1_wo_beta_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.1_wo_beta
+  run_id: EXP005_k0.1_wo_beta_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5
+  run_id: EXP005_k0.5_full_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_full
+  run_id: EXP005_k0.5_full_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5
+  run_id: EXP005_k0.5_full_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_full
+  run_id: EXP005_k0.5_full_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5
+  run_id: EXP005_k0.5_full_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_full
+  run_id: EXP005_k0.5_full_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5
+  run_id: EXP005_k0.5_full_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_full
+  run_id: EXP005_k0.5_full_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5
+  run_id: EXP005_k0.5_full_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_full
+  run_id: EXP005_k0.5_full_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5 --no_lambda_grad
+  run_id: EXP005_k0.5_fixed_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_fixed
+  run_id: EXP005_k0.5_fixed_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5 --no_lambda_grad
+  run_id: EXP005_k0.5_fixed_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_fixed
+  run_id: EXP005_k0.5_fixed_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5 --no_lambda_grad
+  run_id: EXP005_k0.5_fixed_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_fixed
+  run_id: EXP005_k0.5_fixed_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5 --no_lambda_grad
+  run_id: EXP005_k0.5_fixed_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_fixed
+  run_id: EXP005_k0.5_fixed_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5 --no_lambda_grad
+  run_id: EXP005_k0.5_fixed_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_fixed
+  run_id: EXP005_k0.5_fixed_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5 --wo_beta
+  run_id: EXP005_k0.5_wo_beta_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_wo_beta
+  run_id: EXP005_k0.5_wo_beta_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5 --wo_beta
+  run_id: EXP005_k0.5_wo_beta_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_wo_beta
+  run_id: EXP005_k0.5_wo_beta_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5 --wo_beta
+  run_id: EXP005_k0.5_wo_beta_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_wo_beta
+  run_id: EXP005_k0.5_wo_beta_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5 --wo_beta
+  run_id: EXP005_k0.5_wo_beta_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_wo_beta
+  run_id: EXP005_k0.5_wo_beta_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 0.5 --wo_beta
+  run_id: EXP005_k0.5_wo_beta_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k0.5_wo_beta
+  run_id: EXP005_k0.5_wo_beta_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0
+  run_id: EXP005_k1.0_full_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_full
+  run_id: EXP005_k1.0_full_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0
+  run_id: EXP005_k1.0_full_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_full
+  run_id: EXP005_k1.0_full_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0
+  run_id: EXP005_k1.0_full_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_full
+  run_id: EXP005_k1.0_full_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0
+  run_id: EXP005_k1.0_full_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_full
+  run_id: EXP005_k1.0_full_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0
+  run_id: EXP005_k1.0_full_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_full
+  run_id: EXP005_k1.0_full_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0 --no_lambda_grad
+  run_id: EXP005_k1.0_fixed_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_fixed
+  run_id: EXP005_k1.0_fixed_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0 --no_lambda_grad
+  run_id: EXP005_k1.0_fixed_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_fixed
+  run_id: EXP005_k1.0_fixed_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0 --no_lambda_grad
+  run_id: EXP005_k1.0_fixed_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_fixed
+  run_id: EXP005_k1.0_fixed_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0 --no_lambda_grad
+  run_id: EXP005_k1.0_fixed_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_fixed
+  run_id: EXP005_k1.0_fixed_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0 --no_lambda_grad
+  run_id: EXP005_k1.0_fixed_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_fixed
+  run_id: EXP005_k1.0_fixed_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0 --wo_beta
+  run_id: EXP005_k1.0_wo_beta_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_wo_beta
+  run_id: EXP005_k1.0_wo_beta_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0 --wo_beta
+  run_id: EXP005_k1.0_wo_beta_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_wo_beta
+  run_id: EXP005_k1.0_wo_beta_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0 --wo_beta
+  run_id: EXP005_k1.0_wo_beta_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_wo_beta
+  run_id: EXP005_k1.0_wo_beta_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0 --wo_beta
+  run_id: EXP005_k1.0_wo_beta_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_wo_beta
+  run_id: EXP005_k1.0_wo_beta_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 1.0 --wo_beta
+  run_id: EXP005_k1.0_wo_beta_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k1.0_wo_beta
+  run_id: EXP005_k1.0_wo_beta_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0
+  run_id: EXP005_k5.0_full_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_full
+  run_id: EXP005_k5.0_full_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0
+  run_id: EXP005_k5.0_full_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_full
+  run_id: EXP005_k5.0_full_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0
+  run_id: EXP005_k5.0_full_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_full
+  run_id: EXP005_k5.0_full_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0
+  run_id: EXP005_k5.0_full_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_full
+  run_id: EXP005_k5.0_full_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0
+  run_id: EXP005_k5.0_full_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_full
+  run_id: EXP005_k5.0_full_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0 --no_lambda_grad
+  run_id: EXP005_k5.0_fixed_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_fixed
+  run_id: EXP005_k5.0_fixed_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0 --no_lambda_grad
+  run_id: EXP005_k5.0_fixed_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_fixed
+  run_id: EXP005_k5.0_fixed_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0 --no_lambda_grad
+  run_id: EXP005_k5.0_fixed_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_fixed
+  run_id: EXP005_k5.0_fixed_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0 --no_lambda_grad
+  run_id: EXP005_k5.0_fixed_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_fixed
+  run_id: EXP005_k5.0_fixed_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0 --no_lambda_grad
+  run_id: EXP005_k5.0_fixed_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_fixed
+  run_id: EXP005_k5.0_fixed_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0 --wo_beta
+  run_id: EXP005_k5.0_wo_beta_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_wo_beta
+  run_id: EXP005_k5.0_wo_beta_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0 --wo_beta
+  run_id: EXP005_k5.0_wo_beta_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_wo_beta
+  run_id: EXP005_k5.0_wo_beta_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0 --wo_beta
+  run_id: EXP005_k5.0_wo_beta_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_wo_beta
+  run_id: EXP005_k5.0_wo_beta_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0 --wo_beta
+  run_id: EXP005_k5.0_wo_beta_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_wo_beta
+  run_id: EXP005_k5.0_wo_beta_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 5.0 --wo_beta
+  run_id: EXP005_k5.0_wo_beta_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k5.0_wo_beta
+  run_id: EXP005_k5.0_wo_beta_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0
+  run_id: EXP005_k10.0_full_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_full
+  run_id: EXP005_k10.0_full_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0
+  run_id: EXP005_k10.0_full_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_full
+  run_id: EXP005_k10.0_full_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0
+  run_id: EXP005_k10.0_full_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_full
+  run_id: EXP005_k10.0_full_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0
+  run_id: EXP005_k10.0_full_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_full
+  run_id: EXP005_k10.0_full_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0
+  run_id: EXP005_k10.0_full_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_full
+  run_id: EXP005_k10.0_full_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0 --no_lambda_grad
+  run_id: EXP005_k10.0_fixed_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_fixed
+  run_id: EXP005_k10.0_fixed_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0 --no_lambda_grad
+  run_id: EXP005_k10.0_fixed_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_fixed
+  run_id: EXP005_k10.0_fixed_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0 --no_lambda_grad
+  run_id: EXP005_k10.0_fixed_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_fixed
+  run_id: EXP005_k10.0_fixed_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0 --no_lambda_grad
+  run_id: EXP005_k10.0_fixed_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_fixed
+  run_id: EXP005_k10.0_fixed_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0 --no_lambda_grad
+  run_id: EXP005_k10.0_fixed_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_fixed
+  run_id: EXP005_k10.0_fixed_seed40_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 0 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0 --wo_beta
+  run_id: EXP005_k10.0_wo_beta_seed0_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 0 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_wo_beta
+  run_id: EXP005_k10.0_wo_beta_seed0_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 10 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0 --wo_beta
+  run_id: EXP005_k10.0_wo_beta_seed10_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 10 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_wo_beta
+  run_id: EXP005_k10.0_wo_beta_seed10_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 20 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0 --wo_beta
+  run_id: EXP005_k10.0_wo_beta_seed20_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 20 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_wo_beta
+  run_id: EXP005_k10.0_wo_beta_seed20_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 30 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0 --wo_beta
+  run_id: EXP005_k10.0_wo_beta_seed30_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 30 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_wo_beta
+  run_id: EXP005_k10.0_wo_beta_seed30_eval
+- command: python advTrain.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo PPO_FGSM
+    --seed 40 --expert_attack --expert_prior PolicyConstrained --expert_k 10.0 --wo_beta
+  run_id: EXP005_k10.0_wo_beta_seed40_train
+- command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --adv_algo
+    PPO_FGSM --seed 40 --expert_attack --expert_prior PolicyConstrained --result_saving
+    --result_filename EXP005_sweep --addition_msg k10.0_wo_beta
+  run_id: EXP005_k10.0_wo_beta_seed40_eval
