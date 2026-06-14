@@ -1,0 +1,13 @@
+Command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --result_saving --result_filename EXP004_test --train_step 2 --run_id EXP004_test_ec2c7d84 --experiment_id EXP004_test
+Start Time: 2026-06-14 15:55:01.728789
+----------------------------------------
+Traceback (most recent call last):
+  File "E:\myproject\EGRL\evaluation_v3.py", line 4, in <module>
+    from evaluation_v4 import evaluate_policy,evaluate_policy_allinone
+  File "E:\myproject\EGRL\evaluation_v4.py", line 11, in <module>
+    import swanlab
+ModuleNotFoundError: No module named 'swanlab'
+----------------------------------------
+End Time: 2026-06-14 15:55:04.111438
+Duration: 2.38 seconds
+Exit Code: 1

@@ -1,8 +1,6 @@
 # coding=utf8
 import argparse
 
-from grpc import protos_and_services
-
 
 def get_config():
     parser = argparse.ArgumentParser(
@@ -26,6 +24,8 @@ def get_config():
     parser.add_argument('--adv_model_path', default="", help='')
     parser.add_argument('--result_saving', action='store_true', help='whether to save')
     parser.add_argument('--result_filename', default="result", help='path to save result')
+    parser.add_argument('--run_id', default="", help='Unique identifier for the experiment run')
+    parser.add_argument('--experiment_id', default="", help='Experiment identifier (e.g., EXP004)')
     # training parameters
     parser.add_argument('--use_cuda', default=True, help='Use GPU if available')
     parser.add_argument('--cuda_number', type=int, default=0, help='CUDA device number to use')
@@ -40,7 +40,7 @@ def get_config():
 
 
     # log parameters
-    parser.add_argument('--no_wandb', action='store_true', help='whether to use wandb logging')
+    parser.add_argument('--no_swanlab', action='store_true', help='whether to use swanlab logging')
     # fni parameters
     parser.add_argument('--fni_model_path', default="", help='model path for FNI/DARRL/IL')
 
@@ -87,6 +87,9 @@ def get_config():
     parser.add_argument('--expert_cnt',type= int, default=6, help='number of expert models')
     parser.add_argument('--no_lambda_grad', action='store_true', help='whether to update lambda use GD')
     parser.add_argument('--use_hypo', action='store_true', help='whether to use HYPO')
+
+    # annealing parameters
+    parser.add_argument('--sharpness', type=float, default=10.0, help='k for expert control')
 
 
     return parser

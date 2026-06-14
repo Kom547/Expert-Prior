@@ -1,0 +1,4 @@
+experiment_id: EXP004_test
+runs:
+  - command: "python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --result_saving --result_filename EXP004_test --train_step 2"
+  - command: "python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --result_saving --result_filename EXP004_test --train_step 2"

@@ -199,6 +199,8 @@ print(f"mean_attack_times:{mean_attack_times:.2f} +/- {std_ep_attack_times:.2f} 
 
 if args.result_saving:
     data = {
+            'run_id': [args.run_id],
+            'experiment_id': [args.experiment_id],
             'env_name': [args.env_name],
             'algo': [args.algo],
             'base_algo':[args.expbase_algo],
