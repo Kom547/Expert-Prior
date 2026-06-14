@@ -1,0 +1,11 @@
+{
+    "scenario": "SAC Adversary Training",
+    "feasible": false,
+    "blockers": [
+        "advTrain.py does not support training SAC adversary (only PPO variants found)."
+    ],
+    "required_implementations": [
+        "algorithm.AdversarialSAC",
+        "advTrain.create_model support for SAC"
+    ]
+}
