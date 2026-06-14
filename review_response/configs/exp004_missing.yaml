@@ -11,15 +11,20 @@ runs:
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --seed 40
     --result_saving --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --seed 0 --result_saving
-    --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_filename EXP004_main_results --expert_attack --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5
+    --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --seed 10
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --seed 20
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --seed 30
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo PPO --seed 40
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo SAC --seed 0 --result_saving
     --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo SAC --seed 10
@@ -31,15 +36,20 @@ runs:
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo SAC --seed 40
     --result_saving --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo SAC --seed 0 --result_saving
-    --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_filename EXP004_main_results --expert_attack --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5
+    --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo SAC --seed 10
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo SAC --seed 20
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo SAC --seed 30
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv1-v0 --algo SAC --seed 40
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo PPO --seed 0 --result_saving
     --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo PPO --seed 10
@@ -51,15 +61,20 @@ runs:
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo PPO --seed 40
     --result_saving --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo PPO --seed 0 --result_saving
-    --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_filename EXP004_main_results --expert_attack --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5
+    --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo PPO --seed 10
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo PPO --seed 20
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo PPO --seed 30
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo PPO --seed 40
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo SAC --seed 0 --result_saving
     --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo SAC --seed 10
@@ -71,15 +86,20 @@ runs:
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo SAC --seed 40
     --result_saving --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo SAC --seed 0 --result_saving
-    --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_filename EXP004_main_results --expert_attack --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5
+    --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo SAC --seed 10
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo SAC --seed 20
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo SAC --seed 30
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv3-v5 --algo SAC --seed 40
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo PPO --seed 0 --result_saving
     --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo PPO --seed 10
@@ -91,15 +111,20 @@ runs:
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo PPO --seed 40
     --result_saving --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo PPO --seed 0 --result_saving
-    --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_filename EXP004_main_results --expert_attack --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5
+    --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo PPO --seed 10
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo PPO --seed 20
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo PPO --seed 30
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo PPO --seed 40
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo SAC --seed 0 --result_saving
     --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo SAC --seed 10
@@ -111,15 +136,20 @@ runs:
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo SAC --seed 40
     --result_saving --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo SAC --seed 0 --result_saving
-    --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_filename EXP004_main_results --expert_attack --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5
+    --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo SAC --seed 10
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo SAC --seed 20
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo SAC --seed 30
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv5-v0 --algo SAC --seed 40
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo PPO --seed 0 --result_saving
     --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo PPO --seed 10
@@ -131,15 +161,20 @@ runs:
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo PPO --seed 40
     --result_saving --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo PPO --seed 0 --result_saving
-    --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_filename EXP004_main_results --expert_attack --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5
+    --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo PPO --seed 10
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo PPO --seed 20
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo PPO --seed 30
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo PPO --seed 40
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo SAC --seed 0 --result_saving
     --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo SAC --seed 10
@@ -151,12 +186,17 @@ runs:
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo SAC --seed 40
     --result_saving --result_filename EXP004_main_results
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo SAC --seed 0 --result_saving
-    --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_filename EXP004_main_results --expert_attack --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5
+    --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo SAC --seed 10
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo SAC --seed 20
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo SAC --seed 30
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty
 - command: python evaluation_v3.py --env_name TrafficEnv8-v1 --algo SAC --seed 40
-    --result_saving --result_filename EXP004_main_results --expert_prior ValuePenalty
+    --result_saving --result_filename EXP004_main_results --expert_attack --expert_model_path
+    /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_prior ValuePenalty

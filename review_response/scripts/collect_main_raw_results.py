@@ -64,10 +64,13 @@ def check_missing(df):
 
 def generate_missing_yaml(missing_runs, output_yaml="review_response/configs/exp004_missing.yaml"):
     runs = []
+    # Base expert model path based on the server scripts you provided
+    expert_model_base_path = "/data/lxy/STA-Expert/expert_model/MoEs/f_0.5"
+
     for env, victim, method, seed in missing_runs:
         cmd = f"python evaluation_v3.py --env_name {env} --algo {victim} --seed {seed} --result_saving --result_filename EXP004_main_results"
         if method != "Vanilla":
-            cmd += f" --expert_prior {method}"
+            cmd += f" --expert_attack --expert_model_path {expert_model_base_path} --expert_prior {method}"
         runs.append({"command": cmd})
         
     config = {
