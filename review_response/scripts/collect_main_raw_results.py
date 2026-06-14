@@ -64,7 +64,7 @@ def check_missing(df):
 
 def generate_missing_yaml(missing_runs, output_yaml="review_response/configs/exp004_missing.yaml"):
     runs = []
-    # Base expert model path based on the server scripts you provided
+    # Using the absolute path provided by the user
     expert_model_base_path = "/data/lxy/STA-Expert/expert_model/MoEs/f_0.5"
 
     for env, victim, method, seed in missing_runs:
