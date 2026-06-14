@@ -1,0 +1,2 @@
+run_id,command,start_time,end_time,duration_sec,exit_code,param_count,os,gpu
+test1,python -c print('hello'),2026-06-14 16:04:20.946260,2026-06-14 16:04:20.995815,0.04955577850341797,0,,Windows 10 AMD64,No GPU
