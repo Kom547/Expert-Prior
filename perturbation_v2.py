@@ -174,6 +174,8 @@ def FGSM_v2(adv_action, victim_agent, last_state, epsilon=0.1,
     clamp_max = torch.min((ori_state + epsilon), torch.ones_like(ori_state))
 
     last_state = ori_state.clone().detach().to(device)
+    if len(last_state.shape) == 1:
+        last_state = last_state.unsqueeze(0)  # shape: (1, obs_dim)
     # print('last_state', last_state)
 
     if hasattr(victim_agent, 'policy'):
@@ -184,24 +186,23 @@ def FGSM_v2(adv_action, victim_agent, last_state, epsilon=0.1,
     if not isinstance(adv_action, torch.Tensor):
         adv_action = torch.tensor(adv_action, dtype=torch.float32, device=device)
     adv_action = adv_action.to(device)
+    if adv_action.dim() == 0:
+        adv_action = adv_action.view(1)
 
     loss_fn = nn.MSELoss(reduction='mean')
 
     for i in range(num_iterations):
         last_state.requires_grad_(True)
-
-        if isinstance(victim_agent, FniNet):
-            outputs,_, _ = victim_agent(last_state)
-            policy.zero_grad()
-        else:
-            outputs = policy(last_state, deterministic=True)
-            # print('action pred is', action_pred)
-            if isinstance(outputs, tuple):
-                outputs = outputs[0]  # usually (action, value)
-            policy.zero_grad(set_to_none=True)
+        # outputs_unclip, _, _ = policy(last_state, deterministic=True)
+        # outputs = torch.clamp(outputs_unclip, min=-1.0, max=1.0)
+        outputs, _, _ = policy(last_state, deterministic=True)
+        policy.zero_grad(set_to_none=True)
 
         #print('o,a',outputs,adv_action)
         # Compute loss
+        if adv_action.dim() == 1:
+            adv_action = adv_action.view(-1, 1)
+        # print('outputs = ', outputs, 'adv_action = ', adv_action)
         cost = -loss_fn(outputs, adv_action)
         cost.backward()
 
@@ -382,3 +383,12 @@ def cw_attack_v2(victim_agent, last_state, adv_action, targeted=True, epsilon=0.
     #
     # # 保存图像到指定文件夹
     # plt.savefig(os.path.join(save_dir, 'loss_iterations_iter{}.png'.format(iters)))
+
+def match_shape(tensor_a, tensor_b):
+    """
+    Match tensor_b to tensor_a's shape (e.g., (1,) or (1,1)).
+    Useful for loss_fn alignment.
+    """
+    if tensor_b.shape != tensor_a.shape:
+        tensor_b = tensor_b.view(*tensor_a.shape)
+    return tensor_b

@@ -12,7 +12,7 @@ from config import get_config
 import Environment.environment
 import os
 import torch as th
-from perturbation import *
+from perturbation_v2 import *
 import pandas as pd
 from utils import get_attack_prob, get_trained_agent
 from PIL import Image
@@ -154,7 +154,7 @@ for episode in range(args.train_step):
 
             #专家攻击
             if args.expert_attack:
-                expert_actions,_,_ = sample_from_mixture(obs, expert_models,device=device)
+                expert_actions,_,_ = sample_from_mixture(obs, expert_models, device=device)
                 adv_actions = expert_actions.cpu().numpy()[0]
 
             # 记录当前步的obs和adv_actions
@@ -162,7 +162,7 @@ for episode in range(args.train_step):
                 episode_obs.append(obs.copy())
                 episode_adv_actions.append(adv_actions.copy())
 
-            print(episode_steps, 'Victim action is', actions, 'adv actions is', adv_actions, 'obs ', obs_tensor[-2:])
+            # print(episode_steps, 'Victim action is', actions, 'adv actions is', adv_actions, 'obs ', obs_tensor[-2:])
 
             # act_list = env.unwrapped.get_act()
             # alpha = 4
