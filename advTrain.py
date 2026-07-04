@@ -8,8 +8,8 @@ from stable_baselines3.common.monitor import Monitor
 import Environment.environment
 import matplotlib.pyplot as plt
 import pandas as pd
-import wandb
-from wandb.integration.sb3 import WandbCallback
+import swanlab
+from swanlab.integration.sb3 import SwanLabCallback
 from callback import CustomEvalCallback
 import random
 from buffer import PaddingRolloutBuffer, DecoupleRolloutBuffer, DecouplePaddingRolloutBuffer
@@ -23,13 +23,13 @@ import os
 def create_model(args, env, rollout_buffer_class, device, best_model_path, run=None):
     """
     根据 args 配置来创建 基于PPO的敌手模型。
-    如果需要 wandb，返回模型时会附带 wandb 配置信息。
+    如果需要 swanlab，返回模型时会附带 swanlab 配置信息。
     :param args: 系统参数
     :param env: 环境名
     :param rollout_buffer_class: 回放池类型
     :param device: 模型加载设备名
     :param best_model_path: 最优模型存储路径
-    :param run: 是否使用wandb进行日志记录
+    :param run: 是否使用swanlab进行日志记录
     """
     # 根据 decouple 来选择模型
     if args.decouple:
@@ -130,17 +130,17 @@ def main():
         env = DummyVecEnv([make_env(args.seed, 0)])
     eval_env = DummyVecEnv([make_env(args.seed + 1000, 0)])
 
-    # 初始化wandb并构建敌手模型
-    if not args.no_wandb:
+    # 初始化swanlab并构建敌手模型
+    if not args.no_swanlab:
         run_name = f"{args.attack_method}-{args.algo}-{args.addition_msg}"
-        run = wandb.init(project="ExpertPriorRL", name=run_name, config=args, sync_tensorboard=True)
+        run = swanlab.init(project="ExpertPriorRL", name=run_name, config=args, sync_tensorboard=True)
         model = create_model(args, env, rollout_buffer_class, device, best_model_path, run)
-        wandb_callback = WandbCallback(gradient_save_freq=500, verbose=2)
+        swanlab_callback = SwanLabCallback(gradient_save_freq=500, verbose=2)
         eval_callback = CustomEvalCallback(eval_env, trained_agent=model.trained_agent,
                                        best_model_save_path=eval_best_model_path, n_eval_episodes=20, eval_freq=args.n_steps,
                                        unlimited_attack=args.unlimited_attack, attack_method=args.attack_method)
         model.learn(total_timesteps=args.train_step * args.n_steps, progress_bar=True,
-                    callback=[checkpoint_callback, wandb_callback, eval_callback])
+                    callback=[checkpoint_callback, swanlab_callback, eval_callback])
     else:
         model = create_model(args, env, rollout_buffer_class, device, best_model_path)
         eval_callback = CustomEvalCallback(eval_env, trained_agent=model.trained_agent,

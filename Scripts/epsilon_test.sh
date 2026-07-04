@@ -25,7 +25,7 @@ env=TrafficEnv3-v5
         #cuda_number=0
         # 拼接完整的命令，根据原命令模板
         #python st_attack_fgsm_exp_alternation.py --env_name TrafficEnv3-v0 --algo PPO --attack_eps 0.05 --attack --adv_steps 9 --addition_msg beta_env3_PPO_0.05_advsteps9_VP_250 --train_step 250 --expert_attack --expert_model_path /data/lxy/STA-Expert/expert_model/ensemblev2_2 --adv_algo PPO_FGSM --expert_prior ValuePenalty
-        cmd="python advTrain.py --no_wandb --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/EPRL/expert_model/ensemblev2_2 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
+        cmd="python advTrain.py --no_swanlab --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/EPRL/expert_model/ensemblev2_2 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
         #cmd="python st_attack_fgsm.py --adv_algo PPO_FGSM --addition_msg ${addition_msg} --attack_eps ${eps} --algo ${algo} --env_name ${env} --train_step 250 --attack --adv_steps 9 --n_steps 512 --cuda_number ${cuda_number} --attack_method fgsm"
 
         # 分发到对应 GPU 的命令文件中

@@ -8,7 +8,7 @@ import csv
 
 from expert_imitation_learning_v2 import sample_from_mixture_vec
 from perturbation import *
-import wandb
+import swanlab
 from policy import FniNet
 
 def evaluate_policy_csv(
@@ -161,7 +161,7 @@ def evaluate_policy_csv(
     if return_episode_rewards:
         return episode_rewards, episode_lengths, episode_attack_times
 
-    wandb.log({"mean_reward": mean_reward, "std_reward": std_reward})
+    swanlab.log({"mean_reward": mean_reward, "std_reward": std_reward})
     return mean_reward, std_reward
 
 

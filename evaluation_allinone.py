@@ -7,7 +7,7 @@ import os
 
 from expert_imitation_learning_v2 import sample_from_mixture_vec
 from perturbation import *
-import wandb
+import swanlab
 from policy import FniNet
 
 def evaluate_policy(
@@ -180,7 +180,7 @@ def evaluate_policy(
             adv_actions=all_adv_actions
         )
 
-    wandb.log({"mean_reward": mean_reward, "std_reward": std_reward})
+    swanlab.log({"mean_reward": mean_reward, "std_reward": std_reward})
     return mean_reward, std_reward
 
 def attack_process(obs_tensor, adv_action_mask, clipped_adv_actions, actions, attack_method, trained_agent, device):

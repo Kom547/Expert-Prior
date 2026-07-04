@@ -14,7 +14,7 @@ for env in TrafficEnv3-v5; do
         addition_msg="ns4096_MoE_rb0.5_ts500_${env}_${algo}_Vanilla_eps${eps}_as${advsteps}_${seed}"
         cuda_number=$(( job_index % 2 ))
         #cuda_number=0
-        cmd="python advTrain.py --no_wandb --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 4096 --train_step 30 --addition_msg ${addition_msg} --num_envs 1 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --cuda_number ${cuda_number}"
+        cmd="python advTrain.py --no_swanlab --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 4096 --train_step 30 --addition_msg ${addition_msg} --num_envs 1 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --cuda_number ${cuda_number}"
         #cmd="python evaluation_v3.py --result_saving --adv_steps ${advsteps} --result_filename AttackEvaluation_0614_withas --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --best_model --addition_msg ${addition_msg}"
 
         log_file="logs/test_log/${addition_msg}.log"
@@ -38,7 +38,7 @@ for env in TrafficEnv3-v5; do
         addition_msg="ns4096_MoE_rb0.5_nobeta_ts500_${env}_${algo}_${eprior}_eps${eps}_as${advsteps}_${seed}"
         cuda_number=$(( job_index % 2 ))
         #cuda_number=0
-        cmd="python advTrain.py --no_wandb --wo_beta --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 4096 --train_step 30 --addition_msg ${addition_msg} --num_envs 1 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
+        cmd="python advTrain.py --no_swanlab --wo_beta --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 4096 --train_step 30 --addition_msg ${addition_msg} --num_envs 1 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
         #cmd="python evaluation_v3.py --adv_steps ${advsteps} --result_saving --result_filename AttackEvaluation_0614_withas --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --best_model --addition_msg ${addition_msg}"
 
       log_file="logs/test_log/${addition_msg}.log"

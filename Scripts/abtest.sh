@@ -16,7 +16,7 @@ for env in TrafficEnv3-v5 TrafficEnv8-v1; do
         addition_msg="MoE_rb0.5_ts500_${env}_${algo}_Vanilla_eps${eps}_as${advsteps}_${seed}"
         cuda_number=$(( job_index % 2 ))
         #cuda_number=0
-        #cmd="python advTrain.py --no_wandb --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 500 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --cuda_number ${cuda_number}"
+        #cmd="python advTrain.py --no_swanlab --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 500 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --cuda_number ${cuda_number}"
         cmd="python evaluation_v3.py --result_saving --adv_steps ${advsteps} --result_filename AttackEvaluation_0616_lunar_withas --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --addition_msg ${addition_msg}"
 
         log_file="logs/test_log/${addition_msg}.log"
@@ -45,7 +45,7 @@ for env in TrafficEnv3-v5 TrafficEnv8-v1; do
 #        addition_msg="MoE_rb0.5_beta_${env}_${algo}_${eprior}_eps${eps}_as${advsteps}_${seed}"
 #        cuda_number=$(( job_index % 2 ))
 #        #cuda_number=0
-#        #cmd="python advTrain.py --no_wandb --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
+#        #cmd="python advTrain.py --no_swanlab --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
 #        cmd="python evaluation_v3.py --result_saving --result_filename AttackEvaluation_MoE_rb05_fix --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --best_model --addition_msg ${addition_msg}"
 #
 #        log_file="logs/test_log/${addition_msg}.log"
@@ -75,7 +75,7 @@ for env in TrafficEnv3-v5 TrafficEnv8-v1; do
 #      cuda_number=$(( job_index % 2 ))
 #      #cuda_number=0
 #      # 拼接完整的命令，根据原命令模板
-#      #cmd="python advTrain.py --no_wandb --wo_beta --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
+#      #cmd="python advTrain.py --no_swanlab --wo_beta --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
 #      cmd="python evaluation_v3.py --result_saving --result_filename AttackEvaluation_MoE_rb05_fix --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --best_model --addition_msg ${addition_msg}"
 #
 #      # 分发到对应 GPU 的命令文件中
@@ -102,12 +102,12 @@ for env in TrafficEnv3-v5 TrafficEnv8-v1; do
 #        addition_msg="MoE_rb0.5_beta_nlg_k6.5_ts500_${env}_${algo}_${eprior}_eps${eps}_as${advsteps}_${seed}"
 #        cuda_number=$(( job_index % 2 ))
 #        #cuda_number=0
-#        cmd="python advTrain.py --no_wandb --expert_k 6.5 --no_lambda_grad --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 500 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
+#        cmd="python advTrain.py --no_swanlab --expert_k 6.5 --no_lambda_grad --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 500 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
 #      else
 #        addition_msg="MoE_rb0.5_beta_k6.5_ts500_${env}_${algo}_${eprior}_eps${eps}_as${advsteps}_${seed}"
 #        cuda_number=$(( job_index % 2 ))
 #        #cuda_number=0
-#        cmd="python advTrain.py --no_wandb --expert_k 6.5 --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 500 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
+#        cmd="python advTrain.py --no_swanlab --expert_k 6.5 --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 500 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
 #        #cmd="python evaluation_v3.py --result_saving --result_filename AttackEvaluation_MoE_rb05_fix --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --best_model --addition_msg ${addition_msg}"
 #      fi
 #      log_file="logs/test_log/${addition_msg}.log"
@@ -136,7 +136,7 @@ for env in TrafficEnv3-v5 TrafficEnv8-v1; do
 #      addition_msg="MoE_rb0.5_beta_nlg_${env}_${algo}_${eprior}_eps${eps}_as${advsteps}_${seed}"
 #      cuda_number=$(( job_index % 2 ))
 #      #cuda_number=0
-#      #cmd="python advTrain.py --no_wandb --no_lambda_grad --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
+#      #cmd="python advTrain.py --no_swanlab --no_lambda_grad --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
 #      cmd="python evaluation_v3.py --result_saving --result_filename AttackEvaluation_MoE_rb05_fix --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --best_model --addition_msg ${addition_msg}"
 #      # 分发到对应 GPU 的命令文件中
 #      log_file="logs/test_log/${addition_msg}.log"
@@ -164,7 +164,7 @@ for env in TrafficEnv3-v5 TrafficEnv8-v1; do
 #      addition_msg="MoE_rb0.5_single_beta_${env}_${algo}_${eprior}_eps${eps}_as${advsteps}_${seed}"
 #      cuda_number=$(( job_index % 2 ))
 #      #cuda_number=0
-#      #cmd="python advTrain.py --no_wandb --expert_cnt 2 --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
+#      #cmd="python advTrain.py --no_swanlab --expert_cnt 2 --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
 #      cmd="python evaluation_v3.py --result_saving --result_filename AttackEvaluation_MoE_rb05_fix --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --best_model --addition_msg ${addition_msg}"
 #      log_file="logs/test_log/${addition_msg}.log"
 #      if [ $cuda_number -eq 0 ]; then
@@ -192,7 +192,7 @@ for env in TrafficEnv3-v5 TrafficEnv8-v1; do
       cuda_number=$(( job_index % 2 ))
       #cuda_number=0
       #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      #cmd="python advTrain.py --no_wandb --expert_k 6.5 --no_lambda_grad --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 4096 --train_step 500 --addition_msg ${addition_msg} --num_envs 1 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
+      #cmd="python advTrain.py --no_swanlab --expert_k 6.5 --no_lambda_grad --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 4096 --train_step 500 --addition_msg ${addition_msg} --num_envs 1 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
       cmd="python evaluation_v3.py --adv_steps ${advsteps} --result_saving --result_filename AttackEvaluation_0616_lunar_withas --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --addition_msg ${addition_msg}"
       # 分发到对应 GPU 的命令文件中
       log_file="logs/test_log/${addition_msg}.log"
@@ -219,7 +219,7 @@ for env in TrafficEnv3-v5 TrafficEnv8-v1; do
 #      addition_msg="MoE_rb0.5_beta_nlg_k6.5_${env}_${algo}_${eprior}_eps${eps}_as${advsteps}_${seed}"
 #      cuda_number=$(( job_index % 2 ))
 #      #cuda_number=0
-#      #cmd="python advTrain.py --no_wandb --expert_k 6.5 --no_lambda_grad --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
+#      #cmd="python advTrain.py --no_swanlab --expert_k 6.5 --no_lambda_grad --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
 #      cmd="python evaluation_v3.py --result_saving --result_filename AttackEvaluation_MoE_rb05_fix --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --best_model --addition_msg ${addition_msg}"
 #      # 分发到对应 GPU 的命令文件中
 #      log_file="logs/test_log/${addition_msg}.log"
@@ -243,7 +243,7 @@ for env in TrafficEnv3-v5 TrafficEnv8-v1; do
         addition_msg="MoE_rb0.5_nobeta_ts500_${env}_${algo}_${eprior}_eps${eps}_as${advsteps}_${seed}"
         cuda_number=$(( job_index % 2 ))
         #cuda_number=0
-        #cmd="python advTrain.py --no_wandb --wo_beta --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 500 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
+        #cmd="python advTrain.py --no_swanlab --wo_beta --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 500 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
         cmd="python evaluation_v3.py --adv_steps ${advsteps} --result_saving --result_filename AttackEvaluation_0616_lunar_withas --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --addition_msg ${addition_msg}"
 
       log_file="logs/test_log/${addition_msg}.log"

@@ -25,8 +25,8 @@ import pandas as pd
 import os
 from FGSM import *
 from stable_baselines3.common.buffers import RolloutBuffer
-import wandb
-from wandb.integration.sb3 import WandbCallback
+import swanlab
+from swanlab.integration.sb3 import swanlabCallback
 import random
 
 from expert_imitation_learning import Actor,load_ensemble_models,sample_from_mixture
@@ -574,14 +574,14 @@ else:
     rollout_buffer_class = RolloutBuffer
 
 
-# init wandb
-if not args.no_wandb:
+# init swanlab
+if not args.no_swanlab:
     run_name = f"{args.attack_method}-{args.algo}-{expert_msg}"
-    run = wandb.init(project="ExpertPriorRL", name=run_name, config=args, sync_tensorboard=True)
+    run = swanlab.init(project="ExpertPriorRL", name=run_name, config=args, sync_tensorboard=True)
     model = AdversarialPPO(args.algo, args.path, args,args.env_name, best_model_path, "MlpPolicy", env, n_steps=args.n_steps, verbose=1,
                            tensorboard_log=f"runs/{run.id}", rollout_buffer_class=rollout_buffer_class, device=device)
-    wandb_callback = WandbCallback(gradient_save_freq=5, verbose=2, model_save_path=f"models/{run.id}",)
-    model.learn(total_timesteps=args.train_step*args.n_steps, progress_bar=True, callback=[checkpoint_callback, wandb_callback])
+    swanlab_callback = swanlabCallback(gradient_save_freq=5, verbose=2, model_save_path=f"models/{run.id}",)
+    model.learn(total_timesteps=args.train_step*args.n_steps, progress_bar=True, callback=[checkpoint_callback, swanlab_callback])
 else:
     model = AdversarialPPO(args.algo, args.path, args,args.env_name, best_model_path, "MlpPolicy", env, n_steps=args.n_steps, verbose=1, rollout_buffer_class=rollout_buffer_class, device=device)
     model.learn(total_timesteps=args.train_step * args.n_steps, progress_bar=True,

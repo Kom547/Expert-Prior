@@ -8,8 +8,8 @@ from stable_baselines3.common.monitor import Monitor
 import Environment.environment
 import matplotlib.pyplot as plt
 import pandas as pd
-import wandb
-from wandb.integration.sb3 import WandbCallback
+import swanlab
+from swanlab.integration.sb3 import swanlabCallback
 from callback import CustomEvalCallback
 import random
 from buffer import PaddingRolloutBuffer, DecoupleRolloutBuffer, DecouplePaddingRolloutBuffer
@@ -22,18 +22,18 @@ import os
 def create_model(args, env, rollout_buffer_class, device, best_model_path, tensorboard_log_dir=None, run=None):
     """
     根据 args 配置来创建 基于PPO的敌手模型。
-    如果需要 wandb，返回模型时会附带 wandb 配置并同步 TensorBoard；
+    如果需要 swanlab，返回模型时会附带 swanlab 配置并同步 TensorBoard；
     否则，会把 TensorBoard 日志写到 tensorboard_log_dir。
     :param args: 系统参数
     :param env: 环境
     :param rollout_buffer_class: 回放池类型
     :param device: 模型加载设备名
     :param best_model_path: 最优模型存储路径
-    :param tensorboard_log_dir: 若不使用 WandB，则传入本地 TensorBoard 日志目录
-    :param run: 若使用 WandB，则传入 run 对象（同步到 WandB 的 TensorBoard）
+    :param tensorboard_log_dir: 若不使用 swanlab，则传入本地 TensorBoard 日志目录
+    :param run: 若使用 swanlab，则传入 run 对象（同步到 swanlab 的 TensorBoard）
     """
     # 先确定应该传给 SB3 的 tensorboard_log 参数
-    # 如果打开了 WandB，就用 runs/{run.id}，保证 WandB 可以同步 TensorBoard
+    # 如果打开了 swanlab，就用 runs/{run.id}，保证 swanlab 可以同步 TensorBoard
     # 否则就用本地的 tensorboard_log_dir
     if run:
         tb_dir = f"runs/{run.id}"
@@ -85,7 +85,7 @@ def main():
     # —— 新增：为 TensorBoard 创建本地日志目录 ——
     tb_log_path = os.path.join(eval_log_path, "tensorboard_logs")
     os.makedirs(tb_log_path, exist_ok=True)
-    # —— 以上就是为了保证不使用 WandB 时也能写日志 ——
+    # —— 以上就是为了保证不使用 swanlab 时也能写日志 ——
 
     best_model_path = os.path.join(eval_log_path, "best_model")
     os.makedirs(best_model_path, exist_ok=True)
@@ -140,14 +140,14 @@ def main():
         env = DummyVecEnv([make_env(args.seed, 0)])
     eval_env = DummyVecEnv([make_env(args.seed + 1000, 0)])
 
-    # 初始化 WandB 并构建敌手模型
-    if not args.no_wandb:
+    # 初始化 swanlab 并构建敌手模型
+    if not args.no_swanlab:
         run_name = f"{args.attack_method}-{args.algo}-{args.addition_msg}"
-        run = wandb.init(project="ExpertPriorRL", name=run_name, config=args, sync_tensorboard=True)
-        # 传入 tb_log_path 和 run，使得 WandB 能同步本地 TensorBoard
+        run = swanlab.init(project="ExpertPriorRL", name=run_name, config=args, sync_tensorboard=True)
+        # 传入 tb_log_path 和 run，使得 swanlab 能同步本地 TensorBoard
         model = create_model(args, env, rollout_buffer_class, device, best_model_path, tensorboard_log_dir=tb_log_path, run=run)
 
-        wandb_callback = WandbCallback(gradient_save_freq=500, verbose=2)
+        swanlab_callback = swanlabCallback(gradient_save_freq=500, verbose=2)
         eval_callback = CustomEvalCallback(
             eval_env,
             trained_agent=model.trained_agent,
@@ -160,10 +160,10 @@ def main():
         model.learn(
             total_timesteps=args.train_step * args.n_steps,
             progress_bar=True,
-            callback=[checkpoint_callback, wandb_callback, eval_callback]
+            callback=[checkpoint_callback, swanlab_callback, eval_callback]
         )
     else:
-        # 不使用 WandB 时，只把 tb_log_path 目录传给 create_model，让 SB3 写 TensorBoard 日志
+        # 不使用 swanlab 时，只把 tb_log_path 目录传给 create_model，让 SB3 写 TensorBoard 日志
         run = None
         model = create_model(args, env, rollout_buffer_class, device, best_model_path, tensorboard_log_dir=tb_log_path, run=None)
 

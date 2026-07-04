@@ -6,7 +6,7 @@ from stable_baselines3.common.utils import obs_as_tensor
 from torch.distributed.rpc.api import method_name
 
 from perturbation import *
-import wandb
+import swanlab
 from policy import FniNet
 
 
@@ -171,7 +171,7 @@ def evaluate_policy(
         assert mean_reward > reward_threshold, "Mean reward below threshold: " f"{mean_reward:.2f} < {reward_threshold:.2f}"
     if return_episode_rewards:
         return episode_rewards, episode_lengths, episode_attack_times
-    wandb.log({"mean_reward": mean_reward, "std_reward": std_reward})
+    swanlab.log({"mean_reward": mean_reward, "std_reward": std_reward})
     return mean_reward, std_reward
 
 

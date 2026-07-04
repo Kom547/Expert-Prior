@@ -12,8 +12,8 @@ import os
 import numpy as np
 from gymnasium.wrappers import TimeLimit
 import torch
-import wandb
-from wandb.integration.sb3 import WandbCallback
+import swanlab
+from swanlab.integration.sb3 import swanlabCallback
 from stable_baselines3.common.vec_env import DummyVecEnv, SubprocVecEnv
 
 
@@ -52,11 +52,11 @@ else:
     env = DummyVecEnv([make_env(args.seed, 0)])
 eval_env = DummyVecEnv([make_env(args.seed + 1000, 0)])
 
-if args.no_wandb is not True:
-    #init wandb
+if args.no_swanlab is not True:
+    #init swanlab
     run_name = f"{args.algo}-{args.env_name}-{args.addition_msg}"
-    run = wandb.init(project="STA_AD_No_Attack", name=run_name, config=args, sync_tensorboard=True)
-    wandb_callback = WandbCallback(gradient_save_freq=0, verbose=2, model_save_path=None,)
+    run = swanlab.init(project="STA_AD_No_Attack", name=run_name, config=args, sync_tensorboard=True)
+    swanlab_callback = swanlabCallback(gradient_save_freq=0, verbose=2, model_save_path=None,)
 
 # log path
 eval_log_path = "./logs/eval/" + os.path.join(args.env_name, args.algo, args.addition_msg)
@@ -74,7 +74,7 @@ else:
     device = torch.device("cpu")
 
 # Instantiate the agent
-if args.no_wandb:
+if args.no_swanlab:
     if args.algo == 'PPO':
         model = PPO("MlpPolicy", env, verbose=1, device=device, n_steps=args.n_steps, n_epochs=args.n_epochs, clip_range=args.clip_range)
     elif args.algo == 'SAC':
@@ -126,10 +126,10 @@ else:
         )
 
 # Train the agent and display a progress bar
-if args.no_wandb:
+if args.no_swanlab:
     model.learn(total_timesteps=args.train_step*args.n_steps, progress_bar=True, callback=[eval_callback])
 else:
-    model.learn(total_timesteps=args.train_step*args.n_steps, progress_bar=True, callback=[eval_callback, wandb_callback])
+    model.learn(total_timesteps=args.train_step*args.n_steps, progress_bar=True, callback=[eval_callback, swanlab_callback])
 
 # Save the agent
 model.save(eval_log_path + "/lunar")

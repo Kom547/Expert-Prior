@@ -19,7 +19,7 @@ for algo in DARRL; do
           addition_msg="${algo}_18_nobeta_${eprior}_${eps}_as${advsteps}_${seed}"
           cuda_number=$(( job_index % 2 ))
           #cuda_number=1
-          #cmd="python advTrain_tensorborad.py --adv_steps ${advsteps} --wo_beta --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --expert_prior ${eprior} --no_wandb --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo ${algo} --attack_eps ${eps} --cuda_number ${cuda_number} --fni_model_path ${fni_model_path}"
+          #cmd="python advTrain_tensorborad.py --adv_steps ${advsteps} --wo_beta --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --expert_prior ${eprior} --no_swanlab --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo ${algo} --attack_eps ${eps} --cuda_number ${cuda_number} --fni_model_path ${fni_model_path}"
           cmd="python evaluation_v3.py --adv_steps ${advsteps} --result_saving --result_filename AttackEvaluation_DARRL --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --addition_msg ${addition_msg} --fni_model_path ${fni_model_path}"
 
           log_file="logs/test_log/${addition_msg}.log"
@@ -46,7 +46,7 @@ for algo in DARRL; do
           addition_msg="${algo}_18_${eprior}_${eps}_as${advsteps}_${seed}"
           cuda_number=$(( job_index % 2 ))
           #cuda_number=1
-          #cmd="python advTrain_tensorborad.py --adv_steps ${advsteps} --wo_beta --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --expert_prior ${eprior} --no_wandb --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo ${algo} --attack_eps ${eps} --cuda_number ${cuda_number} --fni_model_path ${fni_model_path}"
+          #cmd="python advTrain_tensorborad.py --adv_steps ${advsteps} --wo_beta --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --expert_prior ${eprior} --no_swanlab --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo ${algo} --attack_eps ${eps} --cuda_number ${cuda_number} --fni_model_path ${fni_model_path}"
           cmd="python evaluation_v3.py --adv_steps ${advsteps} --result_saving --result_filename AttackEvaluation_DARRL --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --addition_msg ${addition_msg} --fni_model_path ${fni_model_path}"
 
           log_file="logs/test_log/${addition_msg}.log"
@@ -72,7 +72,7 @@ for algo in DARRL; do
         addition_msg="${algo}_18_Vanilla_${eps}_as${advsteps}_${seed}"
         cuda_number=$(( job_index % 2 ))
         #cuda_number=0
-        #cmd="python advTrain_tensorborad.py --adv_steps ${advsteps} --no_wandb --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo ${algo} --attack_eps ${eps} --cuda_number 0 --fni_model_path ${fni_model_path}"
+        #cmd="python advTrain_tensorborad.py --adv_steps ${advsteps} --no_swanlab --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo ${algo} --attack_eps ${eps} --cuda_number 0 --fni_model_path ${fni_model_path}"
         cmd="python evaluation_v3.py --adv_steps ${advsteps} --result_saving --result_filename AttackEvaluation_DARRL --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --addition_msg ${addition_msg} --fni_model_path ${fni_model_path}"
 
         log_file="logs/test_log/${addition_msg}.log"

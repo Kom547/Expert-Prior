@@ -13,7 +13,7 @@ for seed in $(seq 0 1 4); do
         addition_msg="DARRL_23_Vanilla_0.03_${seed}"
         cuda_number=$(( job_index % 2 ))
         #cuda_number=0
-        #cmd="python advTrain_tensorborad.py --no_wandb --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo DARRL --attack_eps 0.03 --cuda_number 0 --fni_model_path policy_v277_20250604_23weights"
+        #cmd="python advTrain_tensorborad.py --no_swanlab --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo DARRL --attack_eps 0.03 --cuda_number 0 --fni_model_path policy_v277_20250604_23weights"
         cmd="python evaluation_v3.py --result_saving --result_filename AttackEvaluation_DARRL --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --best_model --addition_msg ${addition_msg} --fni_model_path policy_v277_20250604_23weights"
 
         log_file="logs/test_log/${addition_msg}.log"
@@ -29,7 +29,7 @@ for seed in $(seq 0 1 4); do
 addition_msg="DARRL_18_Vanilla_0.03_${seed}"
 cuda_number=$(( job_index % 2 ))
 #cuda_number=0
-#cmd="python advTrain_tensorborad.py --no_wandb --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo DARRL --attack_eps 0.03 --cuda_number 0 --fni_model_path policy_v272_20250604_18weights"
+#cmd="python advTrain_tensorborad.py --no_swanlab --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo DARRL --attack_eps 0.03 --cuda_number 0 --fni_model_path policy_v272_20250604_18weights"
 cmd="python evaluation_v3.py --result_saving --result_filename AttackEvaluation_DARRL --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --best_model --addition_msg ${addition_msg} --fni_model_path policy_v272_20250604_18weights"
 
 log_file="logs/test_log/${addition_msg}.log"
@@ -46,7 +46,7 @@ for seed in $(seq 0 1 4); do
         addition_msg="DARRL_23_${eprior}_0.03_${seed}"
         cuda_number=$(( job_index % 2 ))
         #cuda_number=0
-        #cmd="python advTrain_tensorborad.py --expert_model_path /data/lxy/EPRL/expert_model/ensemblev2_2 --expert_attack --expert_prior ${eprior} --no_wandb --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo DARRL --attack_eps 0.03 --cuda_number 0 --fni_model_path policy_v277_20250604_23weights"
+        #cmd="python advTrain_tensorborad.py --expert_model_path /data/lxy/EPRL/expert_model/ensemblev2_2 --expert_attack --expert_prior ${eprior} --no_swanlab --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo DARRL --attack_eps 0.03 --cuda_number 0 --fni_model_path policy_v277_20250604_23weights"
         cmd="python evaluation_v3.py --result_saving --result_filename AttackEvaluation_DARRL --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --best_model --addition_msg ${addition_msg} --fni_model_path policy_v277_20250604_23weights"
         log_file="logs/test_log/${addition_msg}.log"
         if [ $cuda_number -eq 0 ]; then
@@ -62,7 +62,7 @@ for seed in $(seq 0 1 4); do
 addition_msg="DARRL_18_${eprior}_0.03_${seed}"
 cuda_number=$(( job_index % 2 ))
 #cuda_number=0
-#cmd="python advTrain_tensorborad.py --expert_model_path /data/lxy/EPRL/expert_model/ensemblev2_2 --expert_attack --expert_prior ${eprior} --no_wandb --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo DARRL --attack_eps 0.03 --cuda_number 0 --fni_model_path policy_v272_20250604_18weights"
+#cmd="python advTrain_tensorborad.py --expert_model_path /data/lxy/EPRL/expert_model/ensemblev2_2 --expert_attack --expert_prior ${eprior} --no_swanlab --cuda_seed ${seed} --train_step 200 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name TrafficEnv3-v5 --algo DARRL --attack_eps 0.03 --cuda_number 0 --fni_model_path policy_v272_20250604_18weights"
 cmd="python evaluation_v3.py --result_saving --result_filename AttackEvaluation_DARRL --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --best_model --addition_msg ${addition_msg} --fni_model_path policy_v272_20250604_18weights"
 
 log_file="logs/test_log/${addition_msg}.log"

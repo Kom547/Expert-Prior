@@ -8,7 +8,7 @@ import os
 #from expert_imitation_learning_v2 import sample_from_mixture_vec
 from expert_imitation_learning_MoE import sample_from_mixture_vec
 from perturbation import *
-import wandb
+import swanlab
 from policy import FniNet
 
 def evaluate_policy(
@@ -205,7 +205,7 @@ def evaluate_policy(
         assert mean_reward > reward_threshold, f"Mean reward below threshold: {mean_reward:.2f} < {reward_threshold:.2f}"
     if return_episode_rewards:
         return episode_rewards, episode_lengths, episode_attack_times
-    wandb.log({"mean_reward": mean_reward, "std_reward": std_reward})
+    swanlab.log({"mean_reward": mean_reward, "std_reward": std_reward})
     return mean_reward, std_reward
 def evaluate_policy_allinone(
     model,
@@ -389,7 +389,7 @@ def evaluate_policy_allinone(
             adv_actions=all_adv_actions
         )
 
-    wandb.log({"mean_reward": mean_reward, "std_reward": std_reward})
+    swanlab.log({"mean_reward": mean_reward, "std_reward": std_reward})
     return mean_reward, std_reward
 def attack_process(obs_tensor, adv_action_mask, clipped_adv_actions, actions, attack_method, trained_agent,eps, device):
     if adv_action_mask.any():

@@ -20,7 +20,7 @@ for k in 0.2 2.0 3.0 4.0 5.0; do
       cuda_number=$(( job_index % 2 ))
       #cuda_number=0
       #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      cmd="python advTrain.py --no_wandb --expert_k ${k} --no_lambda_grad --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 500 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
+      cmd="python advTrain.py --no_swanlab --expert_k ${k} --no_lambda_grad --adv_steps ${advsteps} --cuda_seed ${seed} --n_steps 128 --train_step 500 --addition_msg ${addition_msg} --num_envs 8 --attack --env_name ${env} --algo ${algo} --attack_eps ${eps} --expert_model_path /data/lxy/STA-Expert/expert_model/MoEs/f_0.5 --expert_attack --cuda_number ${cuda_number} --expert_prior ${eprior}"
       #cmd="python evaluation_v3.py --adv_steps ${advsteps} --result_saving --result_filename AttackEvaluation_0616_lunar_withas --algo ${algo} --env_name ${env} --train_step 100 --attack_eps ${eps} --attack --cuda_number ${cuda_number} --addition_msg ${addition_msg}"
       # 分发到对应 GPU 的命令文件中
       log_file="logs/test_log/${addition_msg}.log"
