@@ -53,3 +53,6 @@ register(id='TrafficEnv8-v1', entry_point='Environment.environment.env8_1.traffi
 
 register(id='TrafficEnv3-v3', entry_point='Environment.environment.env3_3.traffic_env:Traffic_Env',
          kwargs={'attack': False, 'adv_steps': 2, 'eval': False})
+
+register(id='TrafficEnv3-v5', entry_point='Environment.environment.env3_5.traffic_env:Traffic_Env',
+         kwargs={'attack': False, 'adv_steps': 2, 'eval': False})

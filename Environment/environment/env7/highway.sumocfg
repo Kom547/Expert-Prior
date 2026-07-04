@@ -24,7 +24,7 @@
 
     <random_numberType>
         <random value="false"/>
-        <seed value="258"/>
+        <seed value="0"/>
     </random_numberType>
 
     <processing>
